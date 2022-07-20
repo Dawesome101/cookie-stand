@@ -26,9 +26,12 @@ Store.prototype.calculateStoreData = function(store){
 
 Store.prototype.render = function(){
   let tbodyElm = document.getElementById('table-body');
-
   let tbodytrElm = document.createElement('tr');
   tbodyElm.appendChild(tbodytrElm);
+
+  let tfootElm = document.getElementById('table-foot');
+  let tfoottrElm = document.createElement('tr');
+  tfootElm.appendChild(tfoottrElm);
 
   let dailyTotal = 0;
 
@@ -50,7 +53,7 @@ Store.prototype.render = function(){
   }
 };
 
-createTable();
+
 
 let seattle = new Store('Seattle', 23, 65, 6.3);
 let tokyo = new Store('Tokyo', 3, 24, 1.2);
@@ -58,9 +61,29 @@ let dubai = new Store('Dubai', 11, 38, 3.7);
 let paris = new Store('Paris', 20, 38, 2.3);
 let Lima = new Store('Lima', 2, 16, 4.6);
 
-for(let i = 0; i < stores.length; i++){
-  stores[i].render();
+createTable();
+renderAll();
+
+function renderAll(){
+  let tempStoreTotalForHour = [];
+
+  for(let i = 0; i < stores.length; i++){
+    stores[i].render();
+    for (let j = 0; j < stores[i].storeSalesData.length; j++){
+
+      if(tempStoreTotalForHour[j] === undefined)
+      {
+        tempStoreTotalForHour[j] = stores[i].storeSalesData[j];
+      } else {
+        tempStoreTotalForHour[j] += stores[i].storeSalesData[j];
+      }
+    }
+  }
 }
+
+
+
+
 
 function createTable(){
   let parentElm = document.getElementById('sales-table');
