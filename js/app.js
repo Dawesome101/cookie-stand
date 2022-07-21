@@ -32,49 +32,66 @@ Store.prototype.render = function () {
   let tfoottrElm;
   let dailyTotal = 0;
 
-  if (this.storeName !== 'Totals') {
-    let tbodyElm = document.getElementById('table-body');
-    tbodytrElm = document.createElement('tr');
-    tbodyElm.appendChild(tbodytrElm);
-  } else {
-    let tfootElm = document.getElementById('table-foot');
-    tfoottrElm = document.createElement('tr');
-    tfootElm.appendChild(tfoottrElm);
-  }
+  let tbodyElm = document.getElementById('table-body');
+  tbodytrElm = document.createElement('tr');
+  tbodyElm.appendChild(tbodytrElm);
+
+  // if (this.storeName !== 'Totals') {
+  //   let tbodyElm = document.getElementById('table-body');
+  //   tbodytrElm = document.createElement('tr');
+  //   tbodyElm.appendChild(tbodytrElm);
+  // } else {
+  //   let tfootElm = document.getElementById('table-foot');
+  //   tfoottrElm = document.createElement('tr');
+  //   tfootElm.appendChild(tfoottrElm);
+  // }
 
   for (let i = 0; i <= tableCells; i++) {
     if (i === 0) {
-      if (this.storeName !== 'Totals') {
-        let tbodytdElm = document.createElement('td');
-        tbodytrElm.appendChild(tbodytdElm);
-        tbodytdElm.textContent = this.storeName;
-      } else {
-        let tfootthElm = document.createElement('th');
-        tfoottrElm.appendChild(tfootthElm);
-        tfootthElm.textContent = this.storeName;
-      }
+      let tbodytdElm = document.createElement('td');
+      tbodytrElm.appendChild(tbodytdElm);
+      tbodytdElm.textContent = this.storeName;
+
+      // if (this.storeName !== 'Totals') {
+      //   let tbodytdElm = document.createElement('td');
+      //   tbodytrElm.appendChild(tbodytdElm);
+      //   tbodytdElm.textContent = this.storeName;
+      // } else {
+      //   let tfootthElm = document.createElement('th');
+      //   tfoottrElm.appendChild(tfootthElm);
+      //   tfootthElm.textContent = this.storeName;
+      //}
     } else if (i < tableCells) {
-      if (this.storeName !== 'Totals') {
-        dailyTotal += this.storeSalesData[i - 1];
-        let tbodytdElm = document.createElement('td');
-        tbodytrElm.appendChild(tbodytdElm);
-        tbodytdElm.textContent = this.storeSalesData[i - 1];
-      } else {
-        dailyTotal += combinedTotalForEachHour[i - 1];
-        let tfootthElm = document.createElement('th');
-        tfoottrElm.appendChild(tfootthElm);
-        tfootthElm.textContent = combinedTotalForEachHour[i - 1];
-      }
+      dailyTotal += this.storeSalesData[i - 1];
+      let tbodytdElm = document.createElement('td');
+      tbodytrElm.appendChild(tbodytdElm);
+      tbodytdElm.textContent = this.storeSalesData[i - 1];
+
+      // if (this.storeName !== 'Totals') {
+      //   dailyTotal += this.storeSalesData[i - 1];
+      //   let tbodytdElm = document.createElement('td');
+      //   tbodytrElm.appendChild(tbodytdElm);
+      //   tbodytdElm.textContent = this.storeSalesData[i - 1];
+      // } else {
+      //   dailyTotal += combinedTotalForEachHour[i - 1];
+      //   let tfootthElm = document.createElement('th');
+      //   tfoottrElm.appendChild(tfootthElm);
+      //   tfootthElm.textContent = combinedTotalForEachHour[i - 1];
+      // }
     } else {
-      if (this.storeName !== 'Totals') {
-        let tbodytdElm = document.createElement('td');
-        tbodytrElm.appendChild(tbodytdElm);
-        tbodytdElm.textContent = dailyTotal;
-      } else {
-        let tfootthElm = document.createElement('th');
-        tfoottrElm.appendChild(tfootthElm);
-        tfootthElm.textContent = dailyTotal;
-      }
+      let tbodytdElm = document.createElement('td');
+      tbodytrElm.appendChild(tbodytdElm);
+      tbodytdElm.textContent = dailyTotal;
+
+      // if (this.storeName !== 'Totals') {
+      //   let tbodytdElm = document.createElement('td');
+      //   tbodytrElm.appendChild(tbodytdElm);
+      //   tbodytdElm.textContent = dailyTotal;
+      // } else {
+      //   let tfootthElm = document.createElement('th');
+      //   tfoottrElm.appendChild(tfootthElm);
+      //   tfootthElm.textContent = dailyTotal;
+      // }
     }
   }
 };
