@@ -64,18 +64,72 @@ main {
   align-items: center;
 }
 
+form {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 8px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+button {
+  font-family: 'Comfortaa', cursive;
+  font-weight: bolder;
+  height: 6em;
+  border: 5px groove #C67E51;
+  border-radius: 1em;
+  margin: 8em 0 4em 4em;
+  background-color: #7e7b77;
+}
+
+button:hover {
+  width: 9em;
+  height: 6.5em;
+  background-color: #bbb9b7;
+}
+
+button:active {
+  width: 7em;
+  height: 5.5em;
+  background-color: #33312F;
+}
+
+legend {
+  margin: 0 auto 8px auto;
+  padding: 0.4em;
+  font-weight: bold;
+  font-size: 1.2em;
+  border: 0.2em groove #C67E51;
+  ;
+  border-radius: 2em;
+  background-color: #33312F;
+  color: #D2B68B;
+}
+
 table {
   border: 10px #000000;
   border-style: double;
   text-align: center;
   margin: 20px;
   background-color: #33312F;
-  color: #C67E51;
+
 }
 
 table caption {
   font-weight: bolder;
-  color: #C67E51;
+  color: #D2B68B;
   background-color: #33312F;
   padding: 10px;
   border: 10px dotted #000000;
@@ -90,6 +144,7 @@ thead th {
   font-weight: 900;
   border-bottom: 5px solid rgb(0, 0, 0);
   border-left: 5px solid rgb(0, 0, 0);
+  color: #D2B68B;
 }
 
 td {
@@ -101,11 +156,14 @@ td {
 td:first-of-type {
   border-right: 5px solid #000000;
   font-weight: bolder;
+  color: #D2B68B;
 }
 
 td:last-of-type {
   border-left: 5px solid #000000;
   font-weight: bolder;
+  color: #C67E51;
+
 }
 
 tfoot tr {
@@ -118,12 +176,15 @@ tfoot th {
 
 tfoot th:first-of-type {
   border-right: 5px solid #000000;
+  color: #D2B68B;
 }
 
 tfoot th:last-of-type {
-  border-left: 5px solid #000000
+  border-left: 5px solid #000000;
+  color: #C67E51;
 }
 
+/*********** Phone ************/
 @media screen and (max-width: 600px) {
   header ul {
     font-size: 4vw;
@@ -139,7 +200,7 @@ tfoot th:last-of-type {
 
   tr {
     height: 50px;
-    font-size: 1.75vw;
+    font-size: 1.6vw;
   }
 
   td {
@@ -147,6 +208,8 @@ tfoot th:last-of-type {
   }
 }
 
+
+/*********** Tablet ************/
 @media screen and (min-width: 600px) {
   header ul {
     font-size: 3.5vw;
@@ -162,7 +225,7 @@ tfoot th:last-of-type {
 
   tr {
     height: 65px;
-    font-size: 1.6vw;
+    font-size: 1.65vw;
   }
 
   td {
@@ -170,6 +233,7 @@ tfoot th:last-of-type {
   }
 }
 
+/*********** Desktop ************/
 @media screen and (min-width: 960px) {
   header ul {
     font-size: 2vw;
@@ -184,7 +248,7 @@ tfoot th:last-of-type {
   }
 
   tr {
-    font-size: 2vw;
+    font-size: 1.7vw;
   }
 
   td {

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!--Code Fellows: Week 2
+
+<head>
+  <!--Code Fellows: Week 2
     
     Description: Practice using HTML, CSS & JavaScript
 
@@ -9,30 +10,51 @@
     Date: 07/18/2022
     
     File: sales.html-->
-    
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&family=Comfortaa:wght@300&display=swap" rel="stylesheet">
-    <title>Pat's Cookie Stand: Sales</title>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style-sales.css" />
-    <link rel="html" src="index.html" />
-  </head>
-  <body>
-    <header>
-      <h1>Pat's Cookie Stand: Sales Information</h1>
-      <ul>
-        <li>Home</li>
-        <li><a href="index.html"><img src="img/cutter.jpeg" alt="fish shaped cookie cutter"></a></li>
-      </ul>
-    </header>
-    <main>
-      <section id="sales-info">
-        <table id="sales-table">
-        </table>
-      </section>
-    </main>
-    <script src="js/app.js"></script>
-  </body>
+
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&family=Comfortaa:wght@300&display=swap"
+    rel="stylesheet">
+  <title>Pat's Cookie Stand: Sales</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style-sales.css" />
+  <link rel="html" src="index.html" />
+</head>
+
+<body>
+  <header>
+    <h1>Pat's Cookie Stand: Sales Information</h1>
+    <ul>
+      <li>Home</li>
+      <li><a href="index.html"><img src="img/cutter.jpeg" alt="fish shaped cookie cutter"></a></li>
+    </ul>
+  </header>
+  <main>
+    <form id="add-store-form">
+      <fieldset>
+        <legend>Add a Store to the Chart</legend>
+
+        <label for="formStoreName">Store name: </label>
+        <input id="formStoreName" type="text" name="formStoreName" required>
+
+        <label for="minimum">Minimum Customers Per Hour: </label>
+        <input id="minimum" type="number" name="minimum" required>
+
+        <label for="maximum">Maximum Customers Per Hour: </label>
+        <input id="maximum" type="number" name="maximum" required>
+
+        <label for="average">Average Cookies Bought Per Hour: </label>
+        <input id="average" type="number" name="average" required>
+      </fieldset>
+      <button type="submit">Submit Store</button>
+    </form>
+    <section id="sales-info">
+      <table id="sales-table">
+      </table>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+
 </html>
