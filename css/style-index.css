@@ -3,6 +3,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #DBDEE7;
 }
 
 body {
@@ -15,7 +16,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #DBDEE7;
+  background-color: white;
   box-shadow: 5px 10px black;
   border: double 20px #BA592A;
   border-radius: 2em 2em 2em 2em;
@@ -23,9 +24,11 @@ nav {
 
 h1 {
   font-size: 7em;
+  color: #BA592A;
 }
 
 section {
+  background-color: white;
   display: flex;
   flex-direction: row;
   margin-top: 3em;
@@ -111,6 +114,7 @@ h3 {
 }
 
 footer {
+  color: #BA592A;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -121,6 +125,7 @@ footer {
 }
 
 footer ul {
+  background-color: white;
   text-align: center;
   border: 10px ridge #BA592A;
   box-shadow: 5px 10px black;
@@ -130,6 +135,14 @@ footer ul {
 
 footer li {
   font-size: x-large;
+}
+
+footer li:first-of-type {
+  margin-bottom: 1em;
+}
+
+footer li:last-of-type {
+  margin-top: 1em;
 }
 
 footer li:first-of-type:link,
@@ -146,5 +159,7 @@ footer li:last-of-type:hover {
 
 footer img {
   max-width: 50%;
-  margin-top: 1em
+  margin-top: 2em;
+  border: 1px solid white;
+  border-radius: 3em;
 }
